@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUN N FOOD Super Market</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {{>navbar data=Detail}}
+
+    {{>slider slides=slides}}
+
+{{!-- ================================================================================================================ --}}
+    {{!-- banner-1 section --}}
+    <section class="banner1_section background1 py-5">
+        <dic class="continer text-center ">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Fresh and Natural Fresh Food</h1>
+                    <p>From cakes to brownies, and cupcakes to macarons, cake shops in Satna are your go-to hotspot for treating your sweet tooth</p>
+                    <button class="btn btn-outline-primary">Visti Once</button>
+                </div>
+            </div>
+        </dic>
+    </section>
+
+    <title>Fun n Food</title>
+{{!-- =========================================================================================================================== --}}
+    {{!-- services section --}}
+    <section id="services_section" class="py-4 ">
+
+        <div class="container">
+            <h1 class="text-center text-primary">Products You Will Get Here</h1>
+
+
+        <div class="row mt-5">
+
+        {{!-- first product col --}}
+            {{#each pastries}}
+            <div class="col-md-4">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container test-center py-3">
+                            <i class="{{this.icon}}  pastry_icon text-primary"></i>
+                        </div>
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <p>{{this.description}}</p>
+
+                        <a href="{{this.link}}">{{this.linkText}}</a>
+                        <a href="#!" class="ml-3">Book</a>
+ 
+
+
+                    </div>
+                </div>
+            
+            </div>
+            {{/each}}
+           
+
+            {{!-- =================================
+             --}}
+             {{!-- <div class="col-md-4">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container test-center py-3">
+                            <i class="fa-solid fa-cake-candles pastry_icon text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Chocolaty Mood</h5>
+                        <p>Change mood through these Chocolates</p>
+
+                        <a href="#!">Check</a>
+                        <a href="#!" class="ml-3">Book</a>
+
+
+
+                    </div>
+                </div>
+            
+            </div>  --}}
+
+            {{!-- ----------------------------------- --}}
+            {{!-- <div class="col-md-4">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container test-center py-3">
+                            <i class="fa-solid fa-cake-candles pastry_icon text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Icecream Mood</h5>
+                        <p>Change mood through these Icecream</p>
+
+                        <a href="#!">Check</a>
+                        <a href="#!" class="ml-3">Book</a>
+
+
+
+                    </div>
+                </div>
+            
+            </div> --}}
+
+        </div>
+        </div>
+        
+    </section>
+    
+
+    {{!-- banner2 section --}}
+
+    <section class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center pt-5">
+                {{!-- lefr side --}}
+                    <h3>We Providing Services Since 2002 With Proud.</h3>
+                    <p>Cakes are pretty much the highlight of all events in our lives. Any celebration, whether a birthday, an anniversary, or an accomplishment, is incomplete without a delicious cake.</p>
+                    <button class="btn btn-primary">Click Here</button>
+
+                </div>
+
+                <div class="col-md-6 text-center">
+                {{!-- right side --}}
+                    <img src="/static/images/cake.jpg" alt="" style="height:300px;">
+
+                </div>
+            </div>
+
+
+
+            
+        </div>
+        
+    </section>
+
+    {{!-- banner3 section --}}
+
+    <section id="about-us" class="banner2_section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+
+
+                {{!-- Left side side --}}
+                    <img src="/static/images/gifts.jpg" class="img-fluid" alt="" style="height:300px;">                </div>
+                <div class="col-md-6 text-center pt-5">
+
+
+                {{!-- Right side --}}
+                    <h3>We Providing Services Since 2002 With Proud.</h3>
+                    <p>Cakes are pretty much the highlight of all events in our lives. Any celebration, whether a birthday, an anniversary, or an accomplishment, is incomplete without a delicious cake.</p>
+                    <button class="btn btn-primary">Click Here</button>
+
+                </div>
+
+                
+            </div>
+
+
+
+            
+        </div>
+        
+    </section>
+
+{{!-- ====================================================================================================================================================== --}}
+
+    {{!-- contact section  --}}
+    <section id="contact_us_section" class="py-5 background1">
+        <div class="container">
+            <h3 class="text-center text-primary">Contact Us</h3>
+            <div class="row">
+                <div class="col-md-12">
+                <form action="/process-contact-form" method="post">
+                    
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Your email address</label>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="contact_number_field" class="form-label">Your contact number</label>
+                        <input name="phone" type="number" class="form-control" id="contact_number_field">
+                    </div>
+
+                    <div class="form-floating my-4">
+                        <textarea name="query" style="height:250px;" class="form-control" placeholder="Enter Your Query Here" id="queryField"></textarea>
+                        <label for="queryField">Your Query</label>
+                    </div>
+
+                    <div class="container text-center">
+                         <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    
+                </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{{!-- ============================================================================================= --}}
+    {{!-- about section --}}
+
+    <section  class="about_section py-5" id="about_section">
+        <div class="container text-center">
+            <div class="row">
+            <div class="col-md-12">
+                <h3>About this Shop</h3>
+                <p>All your sweet cravings can be satisfied at the cake shops FUN N FOOD in Satna, where you would never be disappointed with the availability of a variety of scrumptious cakes and bakery items</p>
+                <button class="btn btn-success btn-lg">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+        </div>
+        
+    </section>
+
+{{!-- ================================================================================================================= --}}
+    {{!-- Footer section --}}
+
+    <footer class="footer background1 text-center py-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    @2022 Copyright: <span>Fun N Food</span>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+</body>
+</html>
